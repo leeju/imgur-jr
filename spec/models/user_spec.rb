@@ -14,18 +14,21 @@ describe User do
 		end
 	end
 
-	describe "validations" do 
-		context "unique email" do 
-			it { should validate_uniqueness_of(:email) }
-		end
+	
+	context "validates unique email" do 
+		it { should validate_uniqueness_of(:email) }
+	end
 
-		context "presence of email" do 
-			it { should validate_presence_of(:email) }
-		end
+	context "validates presence of email" do 
+		it { should validate_presence_of(:email) }
+	end
 
-		context "presence of password" do 
-			it { should validate_presence_of(:password) }
-		end
+	context "validates presence of password" do 
+		it { should validate_presence_of(:password) }
+	end
+
+	context "validates has_secure_password" do 
+		it { should have_secure_password }
 	end
 end
 

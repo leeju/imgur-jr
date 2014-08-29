@@ -45,5 +45,21 @@ describe User do
 			expect { User.new(:user, password: nil) }.to raise_error(ArgumentError)
 		end
 	end
+
+	context "user has many photos" do 
+		it { should have_many(:photos) }
+	end 
 end
+
+
+
+
+
+
+
+
+
+
+
+
 

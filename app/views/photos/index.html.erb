@@ -1,21 +1,14 @@
 <h3>Imgur Photos</h3>
 <div class="imagelist">
   <% @photos.each_with_index do |p, i| %>
- <div class="image">
-    <img src=<%=p.url%> class="main_page_img"><br>
-     <%= form_for ([p, p.votes.build]) do |f| %>
-      <%= f.label "Votes: #{p.votes.count}" %>
-      <%= f.submit %>
-     <% end %>
+  <div class="image">
+    <%= link_to image_tag("#{p.url}", {:class => "main_page_img"}) %>
 
-  </div>
-
-
-    <a href=photos/<%=p.id %>> <img src=<%=p.url%> class='main_page_img'> </a>
+    Votes: <%= "#{p.votes.count}" %>
 
     <% if (i+1) % 4 == 0 %>
       </br>
     <% end %>
-
+  </div>
   <% end %>
 <div>

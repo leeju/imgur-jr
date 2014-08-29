@@ -1,5 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe UserController, :type => :controller do
+describe UsersController do 
+	let!(:user) { User.create!(email: "stephen@gmail.com", password:"stephen") }
 
+	describe "GET #new" do 
+		it "initializes a new user" do
+			get :new
+			expect(assigns(:user)).to be_a User
+		end
+	end
+
+	describe "POST #create" do 
+		context "when valid params are passed" do 
+			it "creates a new user" do 
+				post :create, user: FactoryGirl.attributes_for(:user)
+			end
+		end
+
+		it "redirects to photos" do 
+			post :create, user: FactoryGirl.attributes_for(:user)
+			expect(response).to redirect_to photos_path
+		end
+	end
 end

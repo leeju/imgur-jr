@@ -1,0 +1,10 @@
+<h3>Imgur Photos</h3>
+
+<% @photos.each_with_index do |p, i| %>
+
+  <img src=<%=p.url%>>
+  <% if (i+1) % 4 == 0 %>
+    </br>
+  <% end %>
+
+<% end %>

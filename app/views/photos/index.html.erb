@@ -1,10 +1,11 @@
 <h3>Imgur Photos</h3>
+<div class="imagelist">
+  <% @photos.each_with_index do |p, i| %>
 
-<% @photos.each_with_index do |p, i| %>
+    <img src=<%=p.url%> class="main_page_img">
+    <% if (i+1) % 4 == 0 %>
+      </br>
+    <% end %>
 
-  <img src=<%=p.url%>>
-  <% if (i+1) % 4 == 0 %>
-    </br>
   <% end %>
-
-<% end %>
+<div>

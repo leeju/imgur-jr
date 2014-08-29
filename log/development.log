@@ -11256,3 +11256,341 @@ Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (2.0ms)
   Rendered _nav.html.erb (0.9ms)
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (8.3ms)
+  Rendered _nav.html.erb (0.7ms)
+Completed 200 OK in 59ms (Views: 52.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:50 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:51 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:51 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:51 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:51 -0400
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-29 13:43:55 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered _nav.html.erb (0.7ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0/1YZ3IsHNq+11+YXC/TCFvXm17N5KFiS4FpYdiwjvY=", "session"=>{"email"=>"y2@aol.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'y2@aol.com' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/photos
+Completed 302 Found in 97ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered _nav.html.erb (3.8ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:43:59 -0400
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-08-29 13:44:32 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered _nav.html.erb (1.4ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:33 -0400
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered _nav.html.erb (1.6ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:44:34 -0400
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered _nav.html.erb (1.8ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:00 -0400
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered _nav.html.erb (1.1ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 13:46:12 -0400

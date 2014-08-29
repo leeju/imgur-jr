@@ -39,6 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
-  #gem 'capybara'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'rspec-support'
 end

@@ -15,10 +15,13 @@ describe PhotosController do
       it "assigns all photos to a variable" do
         get :index
         expect(assigns(:photos)).to eq Photo.all
+        expect(assigns(:photos)).to be_empty
       end
 
       it "renders the index template" do
         get :index
+        p response
+        p response.methods
         expect(response).to render_template("index")
       end
     end

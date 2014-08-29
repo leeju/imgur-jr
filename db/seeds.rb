@@ -9,3 +9,5 @@ User.all.each do |user|
     user.photos << Photo.create(title: "puppy", url: "http://dogtowndogtraining.com/wp-content/uploads/2012/06/300x300-061-e1340955308953.jpg")
   end
 end
+
+

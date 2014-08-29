@@ -1,0 +1,64 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/imgur-jr/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/helpers/photos_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/helpers/votes_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/controllers/votes_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/models/vote.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/imgur-jr/app/models/photo.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1409330149
+  }
+}

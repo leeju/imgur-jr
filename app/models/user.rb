@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :photos
   has_many :comments, through: :photos
-  has_many :votes, as: :votable, through: :photos
-  has_many :votes, as: :votable, through: :comments
+  has_many :votes
 
   has_secure_password
 end

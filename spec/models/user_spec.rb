@@ -26,6 +26,10 @@ describe User do
 		it { should validate_presence_of(:password) }
 	end
 
+	context "validates confirmation of password" do 
+		it { should validate_confirmation_of(:password) }
+	end
+
 	context "validates has_secure_password" do 
 		it { should have_secure_password }
 	end

@@ -45,3 +45,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'rspec-support'
 end
+
+gem 'rails_12factor', group: :production
+
+gem 'sass'

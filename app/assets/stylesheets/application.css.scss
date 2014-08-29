@@ -1,0 +1,115 @@
+@import 'reset';
+
+$base-font-family: Arial,sans-serif;
+$font-color: #ddddd1;
+$body-background-color: #121211;
+$header-font-color: white;
+$base-font-size: 14px;
+$header-font-size: 16px;
+$light-txt-font-color: #ddddd1;
+
+$small-font-size: 12pt;
+$medium-font-size: 14pt;
+$large-font-size: 18pt;
+$x-large-font-size: 24pt;
+
+$link_color: #4E76C9;
+$primary_color: #ddddd1;
+$secondary_color: #164353;
+$info_color: blue;
+$success_color: green;
+$warning_color: red;
+$error_color: red;
+
+nav {
+  background-color: $secondary_color;
+  a {
+    font-size: $medium-font-size;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: black;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  color: $font-color;
+  font-size: $base-font-size;
+  background-color: $body-background-color;
+  a {
+    color: $link_color;
+  }
+  .succes-txt {
+
+  }
+  .success-bg {
+
+  }
+  .warning-txt {
+    color: $warning_color;
+  }
+  .warning-bg {
+    color: $warning_color;
+  }
+  .error {
+    color: $warning_color;
+  }
+  .error-bg {
+    color: $warning_color;
+  }
+  button {
+    font-size: $medium-font-size;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: $secondary_color;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+  .btn {
+    font-size: $medium-font-size;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: $secondary_color;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+  input {
+    font-size: $medium-font-size;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: $secondary_color;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+}
+
+header {
+  color: $header-font-color;
+  font-size: $header-font-size;
+}
+
+.main_page_img {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #444442;
+}
+
+.imagelist {
+  background-color: #2B2B2B;
+  margin: 0 auto;
+  width: 750px;
+}

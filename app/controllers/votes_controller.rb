@@ -4,10 +4,12 @@ class VotesController < ApplicationController
     @photos = Photo.all
     photo = Photo.find(params[:photo_id])
     vote = photo.votes.new(user_id: session[:user_id], votable_id: photo.id, votable_type: "Photo", value: 1)
-    if vote.save
+    user = User.find(session[:user_id])
+    if photo.votes.pluck(:user_id).include?(user.id)
       render 'photos/index' and return
     else
-      render 'photos/index' and return
+      vote.save
+      redirect_to photo_path(photo)
     end
   end
 

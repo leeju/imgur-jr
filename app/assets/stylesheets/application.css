@@ -118,6 +118,11 @@ header {
   margin: 0 auto;
   width: 750px; }
 
+
+  .image {
+    display: inline-block;
+}
+
   nav li {
     display: inline-block;
     margin-right: 20px;

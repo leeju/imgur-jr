@@ -30,9 +30,15 @@ describe User do
 		it { should have_secure_password }
 	end
 
-	context "invalid email" do 
+	context "invalid params" do 
 		it "user is invalid without email" do 
 			expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+		end
+	end
+
+	context "invalid params" do 
+		it "user is invalid without password" do 
+			expect { User.new(:user, password: nil) }.to raise_error(ArgumentError)
 		end
 	end
 end

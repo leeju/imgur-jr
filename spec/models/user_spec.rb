@@ -14,7 +14,6 @@ describe User do
 		end
 	end
 
-	
 	context "validates unique email" do 
 		it { should validate_uniqueness_of(:email) }
 	end
@@ -29,6 +28,12 @@ describe User do
 
 	context "validates has_secure_password" do 
 		it { should have_secure_password }
+	end
+
+	context "invalid email" do 
+		it "user is invalid without email" do 
+			expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+		end
 	end
 end
 

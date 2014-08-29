@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'rspec-support'
+  gem 'factory_girl_rails'
 end
 
 gem 'rails_12factor', group: :production

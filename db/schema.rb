@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829031613) do
 ActiveRecord::Schema.define(version: 20140829154114) do
 
   # These are extensions that must be enabled in order to support this database
@@ -38,7 +37,10 @@ ActiveRecord::Schema.define(version: 20140829154114) do
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
-
+  create_table "sessions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -58,10 +60,5 @@ ActiveRecord::Schema.define(version: 20140829154114) do
 
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
   add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
-
-  create_table "sessions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

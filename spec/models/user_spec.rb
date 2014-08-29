@@ -49,6 +49,10 @@ describe User do
 	context "user has many photos" do 
 		it { should have_many(:photos) }
 	end 
+
+	context "user has many votes" do 
+		it { should have_many(:votes) }
+	end
 end
 
 

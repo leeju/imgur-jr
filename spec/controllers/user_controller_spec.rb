@@ -16,5 +16,10 @@ describe UsersController do
 				post :create, user: FactoryGirl.attributes_for(:user)
 			end
 		end
+
+		it "redirects to photos" do 
+			post :create, user: FactoryGirl.attributes_for(:user)
+			expect(response).to redirect_to photos_path(assigns[:user])
+		end
 	end
 end

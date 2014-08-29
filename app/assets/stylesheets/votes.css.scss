@@ -1,3 +1,94 @@
 // Place all the styles related to the Votes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*# sourceMappingURL=reset.scss.map */
+nav {
+  background-color: #164353; }
+  nav a {
+    font-size: 14pt;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: black;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: #ddddd1;
+  font-size: 14px;
+  background-color: #121211; }
+  body a {
+    color: #4E76C9; }
+  body .warning-txt {
+    color: red; }
+  body .warning-bg {
+    color: red; }
+  body .error {
+    color: red; }
+  body .error-bg {
+    color: red; }
+  body button {
+    font-size: 14pt;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #164353;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC; }
+  body .btn {
+    font-size: 14pt;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #164353;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC; }
+  body input {
+    font-size: 14pt;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #164353;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC; }
+
+header {
+  color: white;
+  font-size: 16px; }
+
+.main_page_img {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #444442; }
+
+.imagelist {
+  background-color: #2B2B2B;
+  margin: 0 auto;
+  width: 750px; }

@@ -13,5 +13,11 @@ describe User do
 			expect(user.password).to eq("stephen")
 		end
 	end
+
+	describe "validations" do 
+		context "unique email" do 
+			it { should validate_uniqueness_of(:email) }
+		end
+	end
 end
 

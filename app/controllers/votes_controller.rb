@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+
   def create
     @photos = Photo.all
     photo = Photo.find(params[:photo_id])

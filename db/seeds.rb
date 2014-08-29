@@ -15,3 +15,5 @@ User.all.each do |user|
     user.photos << Photo.create(title: jb_titles[index], url: jbs[index])
   end
 end
+
+

@@ -1,0 +1,105 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/photos_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/user_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/votes_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/photo.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/vote.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1409343106
+  }
+}

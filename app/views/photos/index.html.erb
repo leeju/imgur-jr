@@ -2,7 +2,7 @@
 <div class="imagelist">
   <% @photos.each_with_index do |p, i| %>
 
-    <img src=<%=p.url%> class="main_page_img">
+    <a href=photos/<%=p.id %>> <img src=<%=p.url%> class='main_page_img'> </a>
     <% if (i+1) % 4 == 0 %>
       </br>
     <% end %>

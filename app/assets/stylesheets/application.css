@@ -118,4 +118,11 @@ header {
   margin: 0 auto;
   width: 750px; }
 
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 2px 6px 10px 6px;
+
+  }
+
 /*# sourceMappingURL=application.css.map */

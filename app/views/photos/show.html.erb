@@ -4,10 +4,12 @@
 <img src="<%= @photo.url%>">
 <br>
 
+<% if current_user %>
      <%= form_for ([@photo, @photo.votes.build]) do |f| %>
       <%= f.label "Votes: #{@photo.votes.count}" %>
       <%= f.submit %>
       <% end %>
+<% end %>
 
 
 <h3>Comments</h3>

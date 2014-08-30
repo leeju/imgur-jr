@@ -10,7 +10,7 @@ adjs = %w(addicting afraid agreeable amused ancient angry annoyed anxious arroga
 nouns = %w(time year people way day man thing woman life child world school state family student group country problem hand part place case week company system program question work government number night Mr point home water room mother area money storey fact month lot right study book eye job word business issue side kind head house service friend father power hour game line end member law car city community name president team minute idea kid body information back parent face others level office door health person art war history party result change morning reason research girl guy food moment air teacher)
 
 
-20.times do
+40.times do
   uname = "#{adjs[rand(adjs.length-1)]}_#{nouns[rand(nouns.length-1)]}"
   User.create(email: Faker::Internet.email, username: uname, password: "password")
 end

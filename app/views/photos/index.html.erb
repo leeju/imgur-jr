@@ -1,14 +1,14 @@
-<h3>Imgur Photos</h3>
-<div class="imagelist">
-  <% @photos.each_with_index do |p, i| %>
-  <div class="image">
-    <%= link_to image_tag("#{p.url}", {:class => "main_page_img"}), photo_path(p) %>
+<center><span id="middle-text">The Most Viral images on the Internet, sorted by popularity</span></center>
 
-    Votes: <%= "#{p.votes.count}" %>
-
-    <% if (i+1) % 4 == 0 %>
-      </br>
+<div class="container">
+  <div class="imagelist">
+    <div class="image">
+    <% @photos.each_with_index do |p, i| %>
+      <%= link_to image_tag("#{p.url}", :class => "main_page_img"), photo_path(p) %>
+      <% if (i+1) % 5 == 0 %>
+        </br>
+      <% end %>
     <% end %>
-  </div>
-  <% end %>
+    </div>
+  <div>
 <div>

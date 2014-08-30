@@ -2,7 +2,7 @@
 <div class="imagelist">
   <% @photos.each_with_index do |p, i| %>
   <div class="image">
-    <%= link_to image_tag("#{p.url}", {:class => "main_page_img"}) %>
+    <%= link_to image_tag("#{p.url}", {:class => "main_page_img"}), photo_path(p) %>
 
     Votes: <%= "#{p.votes.count}" %>
 

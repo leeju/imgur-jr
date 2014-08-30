@@ -7,16 +7,13 @@ class UsersController < ApplicationController
 		@user = User.create(user_params)
 		if @user.save
 			flash[:success] = "You're now registered."
+			session[:user_id] = @user.id
 			redirect_to photos_path
 		else
 			flash.now[:error] = "Make sure your password matches!"
 			render 'new'
 		end
 	end
-
-	# def destroy
-	# 	@user.destroy
-	# end
 
 	private
 	def user_params

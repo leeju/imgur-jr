@@ -4,7 +4,7 @@ class CreateVotes < ActiveRecord::Migration
       t.references :user, index: true
       t.integer :votable_id, polymorphic: true
       t.string :votable_type
-      t.integer :vote_count, default: 0
+
 
       t.timestamps
     end

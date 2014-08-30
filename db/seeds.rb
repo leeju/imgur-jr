@@ -15,11 +15,9 @@ nouns = %w(time year people way day man thing woman life child world school stat
   User.create(email: Faker::Internet.email, username: uname, password: "password")
 end
 
-User.all.each do |user|
-  rand(1..3).times do
+40.times do
   	index = rand(5)
-    user.photos << Photo.create(title: jb_titles[index], url: jbs[index])
-  end
+    Photo.create(title: jb_titles[index], url: jbs[index], user_id: User.all.sample.id)
 end
 
 #each user goes thru each photo; 1-4 chance the user will vote on the photo

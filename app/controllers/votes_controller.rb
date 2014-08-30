@@ -27,12 +27,13 @@ private
   end
 
   def context
-    if params[:photo_id]
-      return Photo.find(params[:photo_id])
-    else
-      return Comment.find(params[:comment_id])
-    end
+    votable_is_photo? ? Photo.find(params[:photo_id]) : Comment.find(params[:comment_id])
   end
+
+  def context_type
+    votable_is_photo? ? "Photo" : "Comment"
+  end
+
 
   def context_type
     if params[:photo_id]

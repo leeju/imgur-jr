@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration
 
       t.references :photo, index: true
       t.references :user, index: true
+      t.integer :vote_count, default: 0
 
       t.timestamps
     end

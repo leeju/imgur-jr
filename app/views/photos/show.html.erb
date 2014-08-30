@@ -5,7 +5,7 @@
 <br>
 
 <% if current_user %>
-     <%= form_for ([@photo, @photo.votes.build]) do |f| %>
+     <%= form_for [@photo, Vote.new] do |f| %>
       <%= f.label "Votes: #{@photo.votes.count}" %>
       <%= f.submit %>
       <% end %>
@@ -16,11 +16,11 @@
 <% @photo.comments.each do |c| %>
 <% c_votes = c.votes.count == nil ? 0 : c.votes.count %>
 <%= "#{c.user.username}: (#{c_votes})" %><br>
+
 <% if current_user %>
-     <%= form_for ([c, c.votes.build]) do |f| %>
-      <%= f.submit %>
-      <% end %>
+   VOTE COMMENT
 <% end %>
+
 <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
 <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
 <%= c.text %><br><br>

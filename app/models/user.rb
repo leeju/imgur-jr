@@ -12,7 +12,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def already_voted_this_photo?(photo)
-    return self.votes.where(votable_type: "Photo", votable_id: photo.id).first != nil
+  def already_voted_this?(context, context_type)
+    if context_type == "Photo"
+      puts context_type
+      5.times { puts "XXXXXXXXX" }
+      return self.votes.where(votable_type: context_type, votable_id: context.id).first != nil
+    else
+      return self.votes.where(votable_type: context_type, votable_id: context.id).first != nil
+    end
   end
 end

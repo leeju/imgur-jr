@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = Photo.all
+    @photos = Photo.all.order("vote_count DESC").limit(20)
   end
 
   def show

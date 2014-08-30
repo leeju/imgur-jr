@@ -15,7 +15,6 @@ nouns = %w(time year people way day man thing woman life child world school stat
   User.create(email: Faker::Internet.email, username: uname, password: "password")
 end
 
-
 User.all.each do |user|
   rand(1..3).times do
   	index = rand(5)
@@ -28,6 +27,7 @@ User.all.each do |user|
   Photo.all.each do |p|
     odds = rand(1..4)
     Vote.create(user_id: user.id, votable_id: p.id, votable_type: "Photo") if odds == 1
+    p.update(vote_count: p.vote_count+1)  if odds == 1
   end
 end
 

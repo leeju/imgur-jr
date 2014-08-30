@@ -12,6 +12,7 @@ class VotesController < ApplicationController
       render 'photos/index' and return
     else
       @vote.save
+      # context.update(vote_count: context.vote_count+1)
       redirect_to photo_path(photo)
     end
   end

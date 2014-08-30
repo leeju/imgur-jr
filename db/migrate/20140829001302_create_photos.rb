@@ -4,6 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.references :user, index: true
+      t.integer :vote_count, default: 0
 
       t.timestamps
     end

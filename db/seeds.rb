@@ -44,6 +44,7 @@ User.all.each do |user|
   Comment.all.each do |c|
     odds = rand(1..6)
     Vote.create(user_id: user.id, votable_id: c.id, votable_type: "Comment") if odds == 1
+    c.update(vote_count: c.vote_count+1) if odds == 1
   end
 end
 

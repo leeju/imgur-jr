@@ -1,11 +1,10 @@
 class VotesController < ApplicationController
 
   def create
-    @photos = Photo.all
+    @photos = Photo.all  ## WHY DO WE NEED THIS LINE (WE DO, BUT I DON'T KNOW WHY)
     photo = Photo.find(params[:photo_id])
     vote = photo.votes.new(user_id: session[:user_id], votable_id: photo.id, votable_type: "Photo", value: 1)
-    user = User.find(session[:user_id])
-    if photo.votes.pluck(:user_id).include?(user.id)
+    if current_user.already_voted_this_photo?(photo)
       render 'photos/index' and return
     else
       vote.save

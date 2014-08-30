@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20140829154114) do
 
   create_table "users", force: true do |t|
     t.string   "email"
+    t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "votes", force: true do |t|
-    t.integer  "value"
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"

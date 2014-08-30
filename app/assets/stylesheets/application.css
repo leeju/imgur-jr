@@ -166,6 +166,20 @@ header {
   border: 2px solid #444442;
   margin: 4px 2px; }
 
+.main_page_img:hover {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #dfc12a;
+  margin: 4px 2px; }
+
+.point-info {
+  width: 169px;
+  background-color: rgba(0,0,0,.7);
+  position: absolute;
+  margin-left: -187px;
+  margin-top: 160px;
+  padding: 5px; }
+
 .container {
   background-color: #2B2B2B;
   -webkit-box-shadow: 0 0 11px 1px #111;

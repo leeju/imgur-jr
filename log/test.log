@@ -2915,3 +2915,284 @@ Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-29 20:11:46.144572"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$VRj.K6/oWAMj/7X9NETCu.MxPrSzaGutxHKX5uJdEoOEmXlaRaHbK"], ["updated_at", "2014-08-29 20:11:46.144572"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "comments" ("id" serial primary key, "text" character varying(255), "photo_id" integer, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_comments_on_photo_id" ON "comments" USING btree ("photo_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_comments_on_user_id" ON "comments" USING btree ("user_id")
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "photos" ("id" serial primary key, "title" character varying(255), "url" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_photos_on_user_id" ON "photos" USING btree ("user_id")
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "sessions" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "votes" ("id" serial primary key, "value" integer, "user_id" integer, "votable_id" integer, "votable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_votes_on_user_id" ON "votes" USING btree ("user_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140829154114')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140829001302')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140829012748')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140829031554')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140829031613')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.368434"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$jJGrISlf3bTMOkvfhzhB1OnmlLNZUfKt9JPj0RNiYmiHC3pLYew4m"], ["updated_at", "2014-08-30 16:59:53.368434"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.390046"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$r2/RVFhEPvSoBAcmNaNlce9SbQiVZZyfqwfZWrqZ6LSVpgZFJZq8m"], ["updated_at", "2014-08-30 16:59:53.390046"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.397723"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$WF8xySMqT6qD9tbVdKNj9.4N.WyqTRHWRQhrUpUGVI.EhZ0OZI/4i"], ["updated_at", "2014-08-30 16:59:53.397723"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 3) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/photos
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.407243"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$m89.XgRuYJDxG.yNivJjfObh4n09PfNyYZ5gfynNuYA3hvV55t1qa"], ["updated_at", "2014-08-30 16:59:53.407243"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.413982"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$SwDnlhcI/KBmw6J9q0cY0.ZTaudxZSGGrwnZG8IGbYsEkq3IAgmSe"], ["updated_at", "2014-08-30 16:59:53.413982"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 5) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/photos
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.844774"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$cz6gpq2Tj7QmzSGp8O1VEeMqtsT8i8nzWfLBvaN.TEc.T9jCSpttu"], ["updated_at", "2014-08-30 16:59:53.844774"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.851501"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$Hbukr7aodnblZobpBGJ/w.zRpuC6MlwNgZnoIa7tMrNkpOybMQNMm"], ["updated_at", "2014-08-30 16:59:53.851501"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 16:59:53.856638"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$h8h/x8zNtQTS9hk5gEeTAe7xHKjrogo5YNR/4Qrgnt.r12nCDZdKi"], ["updated_at", "2014-08-30 16:59:53.856638"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.871573"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$pwJoNIo2dHu0vETGHXOSMORqGEgCwa.XPAgCfD8x/nJs/C0htPMVa"], ["updated_at", "2014-08-30 16:59:53.871573"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.884068"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$2nzXwueuyIx320eUo1PXce4auJAtyr1.uY1pL6YTAxoPGabdG4W2O"], ["updated_at", "2014-08-30 16:59:53.884068"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.896812"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$ueCBuvhVp2I9aMFvuTYEtOVEnI7n1KGXMn52SQ7VQblZ131qakkCG"], ["updated_at", "2014-08-30 16:59:53.896812"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.929221"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$VtceeiIhqCly8grL9JEmve3t3EYv0/PD0RD.KCvr7U..MYBdRVk0a"], ["updated_at", "2014-08-30 16:59:53.929221"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.938775"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$SaYrb23rnCTL2Tl2wZG9z.8X0hdrchPKnr1q0sDWZHANHyRqZYRYK"], ["updated_at", "2014-08-30 16:59:53.938775"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.945800"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$ZH0C7ZJ.Q6YBVxLItpGnPewMZ/yOF6KZ2r/WBjkaGcguUQWc4s4Hy"], ["updated_at", "2014-08-30 16:59:53.945800"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.951770"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$Y3ES2/GN1vmNiC0J8YHORubVxRiGPlj.3BLKZb5a9DJLVGRXSaM/6"], ["updated_at", "2014-08-30 16:59:53.951770"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 16:59:53.957438"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$.u84WIedW.3qLgpOJAgnLOkJSRvNu1i61zJ6edeBCkmF.AJxPwely"], ["updated_at", "2014-08-30 16:59:53.957438"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:00:23.967479"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$PDgAL/IY1SWCZT5bXepDnO47x/zfVCHBQ1ak5aASMpBHa.QskkpUu"], ["updated_at", "2014-08-30 17:00:23.967479"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:00:23.989218"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$SgsJNyp/Uohyl493GJev/uFn1dqStgbklKjTx9oXIcxPyfqRqmT/2"], ["updated_at", "2014-08-30 17:00:23.989218"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:00:23.996535"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$uje5OPuDuNDapKn6yJmMDeaDSswIbf4gv7YazX0TvHLVWHRokHMmi"], ["updated_at", "2014-08-30 17:00:23.996535"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 19) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/photos
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:00:24.007602"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$7fLJRz5qjnhn62eoCzK8mep300xjHJpl00wFQ/PPSfyr69RUYVl5W"], ["updated_at", "2014-08-30 17:00:24.007602"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:00:24.014719"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$rmlrf5rpEGoRAStVQvOkH.oa7Pf3nRWGEvaJoK6rPmzLNvy9g3FIa"], ["updated_at", "2014-08-30 17:00:24.014719"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 21) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/photos
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:01:12.056209"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$My2S1V2VSJeG4WxokwTVhO5UUFPE3V9DAACa1j6el.91N51a9D5KS"], ["updated_at", "2014-08-30 17:01:12.056209"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:01:12.077555"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$xtc9gONindMia0.54hXo4uhO9m2CWAYNOUUdiVy6NGdRbSjEUDQ6m"], ["updated_at", "2014-08-30 17:01:12.077555"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:01:12.084572"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$5nWUu6lnTLBqV0Z/zH5ErONvzO.aJc7nPfTL4w3E8fKrOL4ehI4SO"], ["updated_at", "2014-08-30 17:01:12.084572"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 24) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/photos
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:01:12.095918"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$4zAjlP3AZkbycq3wgULwS.18Btq4ijtTGSSpj6c6iG.1VvXFw0oAi"], ["updated_at", "2014-08-30 17:01:12.095918"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:01:12.102799"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$o1HuNF976KUhHvMH/wliD.IiahGQY.fI7O9TB/rr2T6y6RwOkaizq"], ["updated_at", "2014-08-30 17:01:12.102799"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 26) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/photos
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:22:01.359984"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$0wEtoiMQ68jGZw4AS2.K0.sOa.ghce4C70tHljowC6qhYK7XgVbmm"], ["updated_at", "2014-08-30 17:22:01.359984"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:22:01.381681"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$4QdyZiw4hVvWz0pItNb4We6hFPoCJMSjSEYSj2dY3SkgmM9WWjcOO"], ["updated_at", "2014-08-30 17:22:01.381681"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-08-30 17:22:01.388618"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$6a06XN1aWG.YOP0xBNZDEeWB/Ec5NsD96w9f3P/P7Dc6HgbwlRTsi"], ["updated_at", "2014-08-30 17:22:01.388618"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 29) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/photos
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'stephen@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:22:01.399796"], ["email", "stephen@gmail.com"], ["password_digest", "$2a$04$zkEniiButXonIrhog5dpMeOuFbOCUwEtEVDUaGflt9RwPwiTcFeeW"], ["updated_at", "2014-08-30 17:22:01.399796"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jd@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jd@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-08-30 17:22:01.407035"], ["email", "jd@gmail.com"], ["password_digest", "$2a$04$J8Vzf.5lrL7.WryUxVKYq.tLhmxE7DRWKGJ0OdGZL.3pVnSd5y1qy"], ["updated_at", "2014-08-30 17:22:01.407035"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'jd@gmail.com' AND "users"."id" != 31) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/photos
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

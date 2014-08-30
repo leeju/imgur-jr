@@ -1,37 +1,43 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/application_helper.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/application_helper.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/comments_helper.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/photos_helper.rb": [
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/photos_helper.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/sessions_helper.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/user_helper.rb": [
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/user_helper.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/helpers/votes_helper.rb": [
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/helpers/votes_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/controllers/users_controller.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/controllers/users_controller.rb": [
         1,
         1,
         1,
         null,
         null,
         1,
+        2,
         2,
         2,
         2,
@@ -42,17 +48,13 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
         1,
         1,
         2,
         null,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/controllers/application_controller.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -67,17 +69,7 @@
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/photo.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/user.rb": [
+      "/Users/apprentice/alan/alan/imgur-jr/app/models/user.rb": [
         1,
         1,
         1,
@@ -89,17 +81,13 @@
         1,
         null,
         1,
-        null
-      ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/imgur-jr/app/models/vote.rb": [
-        1,
-        1,
         null,
         1,
-        1,
+        0,
+        null,
         null
       ]
     },
-    "timestamp": 1409343106
+    "timestamp": 1409419321
   }
 }

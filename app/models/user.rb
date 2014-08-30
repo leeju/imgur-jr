@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   has_many :votes
 
   has_secure_password
+
+  def already_voted_this_photo?(photo)
+    return self.votes.where(votable_type: "Photo", votable_id: photo.id).first != nil
+  end
 end

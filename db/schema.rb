@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140829154114) do
     t.string   "title"
     t.string   "url"
     t.integer  "user_id"
+    t.integer  "vote_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

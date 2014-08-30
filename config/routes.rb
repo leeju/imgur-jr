@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :photos do
     resources :votes, only: [:create, :update]
-    resources :comments
+    resources :comments do
+      resources :votes, only: [:create, :update]
+    end
   end
   resources :users, only: [:new, :create] #:destroy]
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-	let!(:user) { User.create(email:"stephen@gmail.com", password:"stephen") }
+	let!(:user) { User.create(username: "jb_super_fan", email:"stephen@gmail.com", password:"stephen") }
 
 	context "email" do
 		it "should return valid email" do

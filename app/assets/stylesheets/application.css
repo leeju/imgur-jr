@@ -203,3 +203,9 @@ header {
   display: inline-block; }
 
  /* something odd going on in terms of the vote count on the image. on each new line it shifts*/
+
+.upload {
+  font-size: 10px;
+  background-color: white;
+  margin: 0 auto;
+ }

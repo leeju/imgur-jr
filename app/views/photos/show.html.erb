@@ -1,7 +1,7 @@
 <h2>Current photo: <%= @photo.title %> </h2>
 <br>
-
-<img src="<%= @photo.url%>">
+<%= image_tag @photo.image.thumb('400x200').url %>
+<!-- <img src="<%# @photo.url%>"> -->
 <br>
 
 <% if current_user %>

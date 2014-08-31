@@ -10,16 +10,14 @@ adjs = %w(addicting afraid agreeable amused ancient angry annoyed anxious arroga
 nouns = %w(time year people way day man thing woman life child world school state family student group country problem hand part place case week company system program question work government number night Mr point home water room mother area money storey fact month lot right study book eye job word business issue side kind head house service friend father power hour game line end member law car city community name president team minute idea kid body information back parent face others level office door health person art war history party result change morning reason research girl guy food moment air teacher)
 
 
-20.times do
+40.times do
   uname = "#{adjs[rand(adjs.length-1)]}_#{nouns[rand(nouns.length-1)]}"
   User.create(email: Faker::Internet.email, username: uname, password: "password")
 end
 
-User.all.each do |user|
-  rand(1..3).times do
+40.times do
   	index = rand(5)
-    user.photos << Photo.create(title: jb_titles[index], url: jbs[index])
-  end
+    Photo.create(title: jb_titles[index], url: jbs[index], user_id: User.all.sample.id)
 end
 
 #each user goes thru each photo; 1-4 chance the user will vote on the photo
@@ -44,6 +42,7 @@ User.all.each do |user|
   Comment.all.each do |c|
     odds = rand(1..6)
     Vote.create(user_id: user.id, votable_id: c.id, votable_type: "Comment") if odds == 1
+    c.update(vote_count: c.vote_count+1) if odds == 1
   end
 end
 

@@ -117,18 +117,19 @@ nav a {
 #middle-text {
   font-size: 22px;
   line-height: 100px;
-  color: white}
+  color: white;}
 
 body {
   font-family: Arial, sans-serif;
   color: #ddddd1;
   font-size: 14px;
-  background-color: black;
-    background-image:
-    linear-gradient(
-      45deg,
-      black, #142325
-    ); }
+  background-color: #121313;
+    background-image: url('main-bg.png');
+    background-repeat: no-repeat;
+    background-position: centercenter;
+    width: 100%; 
+    }
+
   body .warning-txt {
     color: red; }
   body .warning-bg {
@@ -161,12 +162,15 @@ header {
   font-size: 16px; }
 
 .main_page_img {
+  display: inline-block;
   width: 180px;
   height: 180px;
   border: 2px solid #444442;
-  margin: 4px 2px; }
+  margin: 4px 2px;
+  position: relative; }
 
 .main_page_img:hover {
+  visibility: visible;
   width: 180px;
   height: 180px;
   border: 2px solid #dfc12a;
@@ -178,7 +182,8 @@ header {
   position: absolute;
   margin-left: -187px;
   margin-top: 160px;
-  padding: 5px; }
+  padding: 5px;
+  text-align: center;}
 
 .container {
   background-color: #2B2B2B;
@@ -196,3 +201,5 @@ header {
 
 .image {
   display: inline-block; }
+
+ /* something odd going on in terms of the vote count on the image. on each new line it shifts*/

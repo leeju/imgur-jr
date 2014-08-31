@@ -14,8 +14,6 @@ class User < ActiveRecord::Base
 
   def already_voted_this?(context, context_type)
     if context_type == "Photo"
-      puts context_type
-      5.times { puts "XXXXXXXXX" }
       return self.votes.where(votable_type: context_type, votable_id: context.id).first != nil
     else
       return self.votes.where(votable_type: context_type, votable_id: context.id).first != nil

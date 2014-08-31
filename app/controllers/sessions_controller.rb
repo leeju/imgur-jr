@@ -2,11 +2,10 @@ class SessionsController < ApplicationController
 
 	def create
 		user = User.find_by(email: params[:session][:email])
-		user.authenticate(params[:session][:password])
 		if user.nil?
 			flash.now[:error] = "Invalid email/password combination."
 			render 'new'
-		else
+		elsif user.authenticate(params[:session][:password])
 			session[:user_id] = user.id
 			redirect_to photos_path
 		end

@@ -1,19 +1,14 @@
 class VotesController < ApplicationController
 
   def create
-    @photos = Photo.all  ## WHY DO WE NEED THIS LINE (WE DO, BUT I DON'T KNOW WHY)
-    @context = context
-    @vote = Vote.create(user_id: current_user.id, votable_id: context.id, votable_type: context_type)
-    #photo = Photo.find(params[:photo_id])
-    10.times {p context.inspect}
-    10.times {p params}
-    #vote = photo.votes.new(user_id: current_user.id, votable_id: photo.id, votable_type: "Photo")
-    if current_user.already_voted_this?(context, context_type)
-      render 'photos/index' and return
+    @context = context_obj
+    @vote = Vote.new(user_id: current_user.id, votable_id: @context.id, votable_type: context_type)
+    if current_user.already_voted_this?(@context, context_type)
+      redirect_to context_path
     else
       @vote.save
-      # context.update(vote_count: context.vote_count+1)
-      redirect_to photo_path(photo)
+      @context.update(vote_count: @context.vote_count + 1)
+      redirect_to context_path
     end
   end
 
@@ -26,13 +21,17 @@ private
     params[:photo_id] ? true : false
   end
 
-  def context
+  def context_obj
     votable_is_photo? ? Photo.find(params[:photo_id]) : Comment.find(params[:comment_id])
   end
 
   def context_type
     votable_is_photo? ? "Photo" : "Comment"
   end
+
+def context_path
+    votable_is_photo? ? photo_path(context_obj) : photo_path(context_obj.photo)
+end
 
 
   def context_type

@@ -6,6 +6,7 @@
 /public/system
 /coverage/
 /spec/tmp
+/imgur_jr/log
 
 ## Environment normalisation:
 /.bundle

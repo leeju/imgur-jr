@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140829154114) do
   create_table "photos", force: true do |t|
     t.string   "title"
     t.string   "url"
+    t.string   "image_uid"
+    t.string   "image_name"
     t.integer  "user_id"
     t.integer  "vote_count", default: 0
     t.datetime "created_at"

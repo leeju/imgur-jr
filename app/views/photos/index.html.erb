@@ -8,14 +8,15 @@
   <div class="imagelist">
     <div class="image">
     <% @photos.each_with_index do |p, i| %>
-      <%= link_to image_tag("#{p.url}", :class => "main_page_img"), photo_path(p) %>
+      <%# link_to image_tag("#{p.url}", :class => "main_page_img"), photo_path(p) %>
+      <%= link_to image_tag(p.image.thumb('180x180#').url, alt:p.title), photo_path(p), :class => "main_page_img"  %>
       <span class="point-info">
-        <center><%= p.votes.count %> votes</center>
+        <p><%= p.votes.count %> votes</p>
       </span>
       <% if (i + 1) % 5 == 0 %>
         </br>
       <% end %>
     <% end %>
     </div>
-  <div>
-<div>
+  </div>
+</div>

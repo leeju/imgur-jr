@@ -1,23 +1,29 @@
-<h1> Create a new photo</h1>
+<!-- <h1> Create a new photo</h1>
 
 
 <br>
-<%= form_for :photo, url: {action: "create"} do |f| %>
+<%# form_for :photo, url: {action: "create"} do |f| %>
 
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%# f.label :title %><br>
+    <%# f.text_field :title %>
   </p>
 
   <p>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%# f.label :url %><br>
+    <%# f.text_field :url %>
   </p>
 
   <p>
-    <%= f.submit value:"Create new photo" %>
+    <%# f.submit value:"Create new photo" %>
   </p>
-  <% end %>
+  <%# end %>
 
 </div>
 
+ -->
+
+ <%= form_for @photo do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit "Upload" %>
+<% end %>

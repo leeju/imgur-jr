@@ -2,7 +2,7 @@
     <div class="center-nav">
       <div class="main-nav">
         <ul>
-          <li id="logo"><%=  link_to raw("imgur jr"), root_path %></li>
+          <li><%= link_to raw("imgur jr"), root_path, id: "logo" %></li>
           <li><%= link_to raw("&#9729; upload images"), new_photo_path %></li>
         </ul>
       </div>

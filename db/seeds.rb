@@ -17,7 +17,7 @@ end
 
 40.times do
   	index = rand(5)
-    Photo.create(title: jb_titles[index], url: jbs[index], user_id: User.all.sample.id)
+    Photo.create(image_name: jb_titles[index], url: jbs[index], user_id: User.all.sample.id)
 end
 
 #each user goes thru each photo; 1-4 chance the user will vote on the photo

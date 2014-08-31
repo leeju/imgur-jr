@@ -1,7 +1,28 @@
-<%= form_for @user do |f| %>
-<%= f.text_field :email, placeholder: "Enter your email" %> <br>
-<%= f.password_field :username, placeholder: "Username" %> <br>
-<%= f.password_field :password, placeholder: "Password" %> <br>
-<%= f.password_field :password_confirmation, placeholder: "Enter password again" %> <br>
-<%= f.submit value: "Register" %>
-<% end %>
+<center>
+  <span id="middle-text">
+    the simple image sharer
+    <p id="logo-signup">imgur</p>
+  </span>
+</center>
+
+<div class="container-signup">
+	<div class="form-signup">
+  	<span id="register-text">Register</span><br>
+  	<br>
+		<%= form_for @user do |f| %>
+		<%= f.label :email %>:<br>
+		<%= f.text_field :email %><br>
+		<br>
+		<%= f.label :username %>:<br>
+		<%= f.password_field :username %><br>
+		<br>
+		<%= f.label :password %>:<br>
+		<%= f.password_field :password %><br>
+		<br>
+		<%= f.label :retype_password %>:<br>		
+		<%= f.password_field :password_confirmation %><br>
+		<br>
+		<%= f.submit value: "Register" %>
+	<% end %>
+	</div>
+</div>

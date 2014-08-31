@@ -26,8 +26,21 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+html {
+  height: 100%; }
+
 body {
-  background-color: #222222; }
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ddddd1;
+  font-size: 14px;
+  background-color: black;
+  background-image:
+  linear-gradient(
+    45deg,
+    black, #142325
+  ); }
 
 ol, ul {
   list-style: none; }
@@ -72,6 +85,16 @@ nav a {
   font-size: 25px;
   line-height: 50px;
   background-color: #2b2b2b; }
+
+#logo-signup {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding-left: -15px;
+  font-size: 110px;
+  margin-bottom: 25px;
+  margin-top: -60px; }
 
 .main-nav {
   float: left; }
@@ -119,47 +142,6 @@ nav a {
   line-height: 100px;
   color: white}
 
-body {
-  font-family: Arial, sans-serif;
-  color: #ddddd1;
-  font-size: 14px;
-  background-color: black;
-    background-image:
-    linear-gradient(
-      45deg,
-      black, #142325
-    ); }
-  body .warning-txt {
-    color: red; }
-  body .warning-bg {
-    color: red; }
-  body .error {
-    color: red; }
-  body .error-bg {
-    color: red; }
-  body button {
-    font-size: 14pt;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #164353;
-    padding: 2px 6px 2px 6px; }
-  body .btn {
-    font-size: 14pt;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #164353;
-    padding: 2px 6px 2px 6px; }
-  body input {
-    font-size: 14pt;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #164353;
-    padding: 2px 6px 2px 6px; }
-
-header {
-  color: white;
-  font-size: 16px; }
-
 .main_page_img {
   width: 180px;
   height: 180px;
@@ -196,3 +178,55 @@ header {
 
 .image {
   display: inline-block; }
+
+.container-signup {
+  background-color: #2B2B2B;
+  -webkit-box-shadow: 0 0 11px 1px #111;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 400px;
+  height: 400px;
+  border-radius: 10px; }
+
+.form-signup {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 250px; 
+  font-weight: bold; }
+
+#register-text {
+  font-size: 28px;
+  color: white}
+
+input {
+  font-size: 14pt;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 2px 6px 2px 6px; 
+  border: 2px solid #444442; 
+  width: 245px; }
+
+input[type="submit"] {
+  font-weight: bold;
+  color: white;
+  width: 145px;
+  height: 44px;
+  line-height: 35px;
+  font-size: 18px;
+  background-color: #2b2b2b; 
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */ 
+  border: 2px solid #444442; 
+  background-image:
+    linear-gradient(
+      #2b2b2b, black
+    ); }
+
+.error {
+  margin-top: 20px;
+  color: red;
+}

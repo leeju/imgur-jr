@@ -17,11 +17,9 @@
   <%= "#{c.user.username}: (#{c.vote_count}) [#{c.id}]" %><br>
 
   <% if current_user %>
-    <!-- The c.id tag on the line below always defaults to the first comment in the thread! -->
     <%= form_tag("/photos/#{@photo.id}/comments/#{c.id}/votes", method: "post") do %>
-      <%= submit_tag("Vote") %>
+      <%= submit_tag("Vote Comment") %>
     <% end %>
-    <!-- there should be an end tag here for the form_tag, but i get an error if i put it -->
   <% end %>
 
   <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>

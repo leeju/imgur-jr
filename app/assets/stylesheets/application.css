@@ -212,12 +212,11 @@ input {
   width: 245px; }
 
 input[type="submit"] {
-  font-weight: bold;
+  text-align: center;
   color: white;
-  width: 145px;
-  height: 44px;
-  line-height: 35px;
-  font-size: 18px;
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
   background-color: #2b2b2b; 
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -232,3 +231,12 @@ input[type="submit"] {
 .error {
   margin-top: 20px;
   color: red;}
+
+textarea {
+  background-color: gray;
+  color: white;
+}
+
+a.back, a.back:link, a.back:visited, a.back:hover, a.back:focus, a.back:active{
+  color:#4E76C9;
+}

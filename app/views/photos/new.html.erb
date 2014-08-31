@@ -1,6 +1,8 @@
 <h1> Create a new photo</h1>
- <%= form_for @photo do |f| %>
-  <%= f.file_field :image %>
-  <%= f.text_field :image_name %>
-  <%= f.submit "Upload" %>
-<% end %>
+ <div class="container">
+   <%= form_for @photo do |f| %>
+    <%= f.file_field :image %>
+    <%= f.text_field :image_name %>
+    <%= f.submit "Upload" %>
+  <% end %>
+</div>

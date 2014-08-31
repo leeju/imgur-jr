@@ -50,3 +50,4 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'sass'
+gem 'dragonfly'

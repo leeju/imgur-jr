@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 			render 'new'
 		elsif user.authenticate(params[:session][:password])
 			session[:user_id] = user.id
-			redirect_to photos_path
+  		redirect_to photos_path
 		else
 			flash.now[:error] = "Invalid password."
 			render 'new'

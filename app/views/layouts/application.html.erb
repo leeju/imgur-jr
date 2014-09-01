@@ -26,8 +26,10 @@
 				<%= f.submit "Login" %>
 			<% end %>
 	  </div>
-
+	  <%= p "*"*50 %>
+		<%= p session[:user_id] %>
+		<%= p "*"*50 %>
 		<%= yield %>
-
+		
 	</body>
 </html>

@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     @comment = @photo.comments.build(comment_params)
     @comment.update(user_id: current_user.id)
     20.times { puts "Comment Controller: CREATE"}
-    p params
     if @comment.save
       redirect_to @photo
     else

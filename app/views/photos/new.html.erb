@@ -1,23 +1,8 @@
 <h1> Create a new photo</h1>
-
-
-<br>
-<%= form_for :photo, url: {action: "create"} do |f| %>
-
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </p>
-
-  <p>
-    <%= f.submit value:"Create new photo" %>
-  </p>
+ <div class="container">
+   <%= form_for @photo do |f| %>
+    <%= f.file_field :image %>
+    <%= f.text_field :image_name %>
+    <%= f.submit "Upload" %>
   <% end %>
-
 </div>
-

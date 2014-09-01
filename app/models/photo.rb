@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
-  validates :title, presence: true
-  validates :url, presence: true
+  validates :image_name, presence: true
+
+  dragonfly_accessor :image
 
   has_many :comments
   has_many :votes, as: :votable

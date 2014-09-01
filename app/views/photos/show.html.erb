@@ -1,40 +1,39 @@
-<h2>Current photo: <%= @photo.title %> </h2>
-<br>
+<div class="panel">
+  <div class="comments-list">
+    <%#= image_tag @photo.image.thumb('400x200').url %>
+    <br>
 
-<img src="<%= @photo.url%>">
-<br>
-
-<% if current_user %>
-     <%= form_for [@photo, Vote.new] do |f| %>
-      <%= f.label "Votes: #{@photo.votes.count}" %>
-      <%= f.submit %>
-      <% end %>
-<% end %>
-
-
-<h3>Comments</h3>
-<% @photo.comments.order("vote_count DESC").each do |c| %>
-  <%= "#{c.user.username}: (#{c.vote_count}) [#{c.id}]" %><br>
-
-  <% if current_user %>
-    <%= form_tag("/photos/#{@photo.id}/comments/#{c.id}/votes", method: "post") do %>
-      <%= submit_tag("Vote Comment") %>
+    <% if current_user %>
+         <%= form_for [@photo, Vote.new] do |f| %>
+          <%= f.label "#{@photo.votes.count} votes" %> <br>
+          <br>
+          <%= f.submit "Like"%> <br>
+          <br>
+          <% end %>
     <% end %>
-  <% end %>
 
-  <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
-  <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
-  <%= c.text %><br><br>
-<% end %>
-
-<br>
-
-<% if current_user %>
-     <%= form_for [@photo, Comment.new] do |f| %>
-      <%= f.label :comment, "Comment" %>
-      <%= f.text_area :text %>
-      <%= f.submit %>
+    <% if current_user %>
+      <%= form_for [@photo, Comment.new] do |f| %>
+        <%= f.text_area :text, placeholder: "Enter your comment here..." %><br><br>
+        <%= f.submit "Save"%>
       <% end %>
-<% end %>
-
-<%= link_to "Back", root_url %>
+    <% end %>
+    <br>
+    <h3>Comments:</h3>
+    <br>
+    <% @photo.comments.order("vote_count DESC").each do |c| %>
+      <div class="comments">
+      <%= "#{c.user.username} (#{c.vote_count}) [#{c.id}]" %><br>
+        <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
+        <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
+        <%= c.text %><br>
+      </div>
+      <% if current_user %>
+        <%= form_tag("/photos/#{@photo.id}/comments/#{c.id}/votes", method: "post") do %>
+          <%= submit_tag("Like") %> <br><br>
+        <% end %>
+      <% end %>
+    <% end %>
+    <br>
+  </div>
+</div>

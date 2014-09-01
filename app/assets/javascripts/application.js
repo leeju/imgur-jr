@@ -15,7 +15,7 @@ function backgroundFadeIn() {
 }
 
 function backgroundFadeOut() {
-  $('body').css({"background-color": "#20272D"});
+  $('body').css({"background-color": "black"});
   $('.container').css({"opacity": "1", "pointer-events": "auto"});
 }
 

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>imgur jr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-  <%= render partial: "/nav" %>
-</head>
-<body>
+	<head>
+	  <title>imgur jr</title>
+	  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  <%= render partial: "/nav" %>
+	</head>
+	<body>
 
-	<% flash.each do |name, msg| %>
-    <center><%= content_tag :div, msg, class: name %></center>
-  <% end %>
+		<% flash.each do |name, msg| %>
+			<center><%= content_tag :div, msg, class: name %></center>
+	  <% end %>
 
-	<%= yield %>
+	  <!-- Hidden Login -->
+	  <div id="loginUser" style="display: none;">
+	    <h3>Login</h3>
+	    <%= form_for :session, url: "login", remote: true do |f| %>
+				<%= f.text_field :email, placeholder: "Enter your email" %>
+				<%= f.password_field :password, placeholder: "Enter your password" %>
+				<%= f.submit "Login" %>
+			<% end %>
+	  </div>
 
-</body>
+		<%= yield %>
+
+	</body>
 </html>

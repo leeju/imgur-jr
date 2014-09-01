@@ -133,7 +133,7 @@ nav a {
 
 .secondary-nav ul li a {
   float: left;
-  padding-right: 20px;
+  /*padding-right: 20px;*/
   position: relative; }
 
 #middle-text {
@@ -262,3 +262,10 @@ a.back, a.back:link, a.back:visited, a.back:hover, a.back:focus, a.back:active{
   background-color: #181817;
   padding: 10px; 
   margin-bottom: 20px; }
+
+.log-button:hover, .log-button:active {
+  background-color: #444442; }
+
+.log-button a {
+  padding-left: 10px;
+  padding-right: 10px; }

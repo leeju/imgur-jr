@@ -10,7 +10,7 @@
     <% @photos.each_with_index do |p, i| %>
       <%= link_to image_tag(p.image.thumb('180x180#').url, alt:p.image_name), photo_path(p), :class => "main_page_img"  %>
       <span class="point-info">
-        <p><%= p.votes.count %> votes</p>
+        <p><%= p.vote_count %> votes</p>
       </span>
       <% if (i + 1) % 5 == 0 %>
         </br>

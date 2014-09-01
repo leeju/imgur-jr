@@ -1,11 +1,12 @@
 <div class="panel">
   <div class="comments-list">
+    <span id="image_name"><%= @photo.image_name %></span><br><br>
     <%= image_tag @photo.image.thumb('400x200').url %>
-    <br>
+    <br><br>
 
     <% if current_user %>
          <%= form_for [@photo, Vote.new] do |f| %>
-          <%= f.label "#{@photo.votes.count} votes" %> <br>
+          <%= f.label "#{@photo.vote_count} votes" %> <br>
           <br>
           <%= f.submit "Like"%> <br>
           <br>
@@ -23,7 +24,7 @@
     <br>
     <% @photo.comments.order("vote_count DESC").each do |c| %>
       <div class="comments">
-      <%= "#{c.user.username} (#{c.vote_count}) [#{c.id}]" %><br>
+      <%= "#{c.user.username} (#{c.vote_count} votes)" %><br><br>
         <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
         <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
         <%= c.text %><br>

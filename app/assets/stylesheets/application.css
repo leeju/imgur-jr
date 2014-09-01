@@ -35,11 +35,18 @@ body {
   font-family: Arial, sans-serif;
   color: #ddddd1;
   font-size: 14px;
-    background-color: #121313;
-    background-image: url('main-bg.png');
-    background-repeat: no-repeat;
-    background-position: centercenter;
-    width: 100%;  }
+  background-color: black;
+  /*background-image: url('main-bg.png');
+  background-repeat: no-repeat;
+  background-position: centercenter;
+  width: 100%;*/ 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-image:
+  linear-gradient(
+    45deg,
+    black, #142325
+  ); }
 
 ol, ul {
   list-style: none; }
@@ -273,3 +280,9 @@ a.back, a.back:link, a.back:visited, a.back:hover, a.back:focus, a.back:active{
 .log-button a {
   padding-left: 10px;
   padding-right: 10px; }
+
+#image_name {
+  font-size: 25px; }
+
+#loginUser {
+  padding-left: 700px; }

@@ -3,11 +3,14 @@ class SessionsController < ApplicationController
 	def create
 		user = User.find_by(email: params[:session][:email])
 		if user.nil?
-			flash.now[:error] = "Invalid email/password combination."
+			flash.now[:error] = "User doesn't exist."
 			render 'new'
 		elsif user.authenticate(params[:session][:password])
 			session[:user_id] = user.id
-			redirect_to photos_path
+  		redirect_to photos_path
+		else
+			flash.now[:error] = "Invalid password."
+			render 'new'
 		end
 	end
 

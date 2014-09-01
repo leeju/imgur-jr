@@ -1,20 +1,20 @@
 <nav>
-    <div class="center-nav">
-      <div class="main-nav">
-        <ul>
-          <li><%= link_to raw("imgur jr"), root_path, id: "logo" %></li>
-          <li><%= link_to raw("&#9729; upload images"), new_photo_path %></li>
-        </ul>
-      </div>
-      <div class="secondary-nav">
-        <ul>
-          <% if !current_user %>
-          <li><%= link_to "sign up", new_user_path %></li>
-          <li><%= link_to "sign in", login_path %></li>
-          <% else %>
-          <li><%= link_to "Logout", logout_path %></li>
-        </ul>
-        </div>
-    <% end %>
+  <div class="center-nav">
+    <div class="main-nav">
+      <ul>
+        <li><%= link_to raw("imgur jr"), root_path, id: "logo" %></li>
+        <li><%= link_to raw("&#9729; upload images"), new_photo_path %></li>
+      </ul>
     </div>
+    <div class="secondary-nav">
+      <ul>
+        <% if !current_user %>
+          <li class="log-button"><%= link_to "sign up", new_user_path %></li>
+          <li id="signin-button" class="log-button"><a>sign in</a></li>
+        <% else %>
+          <li class="log-button"><%= link_to "Logout", logout_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>

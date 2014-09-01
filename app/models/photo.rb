@@ -13,5 +13,4 @@ class Photo < ActiveRecord::Base
     group("photos.id").
     order("votes_count DESC").
     limit(20)
-
 end

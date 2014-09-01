@@ -133,7 +133,7 @@ nav a {
 
 .secondary-nav ul li a {
   float: left;
-  padding-right: 20px;
+  /*padding-right: 20px;*/
   position: relative; }
 
 #middle-text {
@@ -230,13 +230,46 @@ input[type="submit"] {
 
 .error {
   margin-top: 20px;
-  color: red;}
+  color: red; }
+
+.success {
+  margin-top: 20px;
+  color: #2ECC40; }  
 
 textarea {
-  background-color: gray;
+  background-color: black;
   color: white;
-}
+  width: 500px; 
+  border: 2px solid #444442; 
+  font-size: 15px; }
 
 a.back, a.back:link, a.back:visited, a.back:hover, a.back:focus, a.back:active{
-  color:#4E76C9;
-}
+  color:#4E76C9; }
+
+.panel {
+  background-color: #2B2B2B;
+  -webkit-box-shadow: 0 0 11px 1px #111;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 660px;
+  border-radius: 10px; 
+  font-size: 16px }
+
+.comments-list {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 600px; }
+
+.comments {
+  background-color: #181817;
+  padding: 10px; 
+  margin-bottom: 20px; }
+
+.log-button:hover, .log-button:active {
+  background-color: #444442; }
+
+.log-button a {
+  padding-left: 10px;
+  padding-right: 10px; }

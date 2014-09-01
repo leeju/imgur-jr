@@ -232,6 +232,10 @@ input[type="submit"] {
   margin-top: 20px;
   color: red; }
 
+.success {
+  margin-top: 20px;
+  color: #2ECC40; }  
+
 textarea {
   background-color: black;
   color: white;

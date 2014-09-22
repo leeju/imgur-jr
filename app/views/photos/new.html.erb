@@ -1,5 +1,6 @@
  <div class="container">
    <%= form_for @photo do |f| %>
+   	<%= render 'shared/errors', object: @photo %>
     <%= f.file_field :image %>
     <%= f.text_field :image_name %>
     <%= f.submit "Upload" %>

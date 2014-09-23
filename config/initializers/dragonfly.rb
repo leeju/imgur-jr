@@ -25,3 +25,14 @@ if defined?(ActiveRecord::Base)
   ActiveRecord::Base.extend Dragonfly::Model
   ActiveRecord::Base.extend Dragonfly::Model::Validations
 end
+
+if Rails.env.development? || Rails.env.test?
+  datastore :file,
+            root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+            server_root: Rails.root.join('public')
+else
+  datastore :s3,
+            bucket_name: imgurjrawsbucket,
+            access_key_id: ENV['S3_KEY'],
+            secret_access_key: ENV['S3_SECRET']
+end

@@ -15,9 +15,9 @@ Dragonfly.app.configure do
 	            server_root: Rails.root.join('public')
 	else
 	  datastore :s3,
-	            bucket_name: YOUR_BUCKET_NAME,
-	            access_key_id: YOUR_S3_KEY,
-	            secret_access_key: YOUR_S3_SECRET,
+	            bucket_name: "imgurjrawsbucket",
+	            access_key_id: ENV['S3_KEY'],
+	            secret_access_key: ENV['S3_SECRET'],
 	            url_scheme: 'https'
 	end
 end

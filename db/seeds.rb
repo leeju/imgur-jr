@@ -37,7 +37,7 @@ end
 end
 
 100.times do
-	Comment.create(user_id: rand(1..40), photo_id: rand(1..20), text: create_comment)
+	Comment.create(user_id: rand(1..40), photo_id: Photo.all.sample.id, text: create_comment)
 end
 
 Comment.all.each do |c|

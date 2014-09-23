@@ -56,3 +56,5 @@ gem 'dragonfly-s3_data_store'
 group :production do
   gem 'rack-cache', :require => 'rack/cache'
 end
+
+ruby '2.0.0'
